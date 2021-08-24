@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minigram</title>
+    <link rel="stylesheet" href="css.css">
+    <link id="linkContacts" href="contacts.html" rel="import">
+    <link id="linkAbout" href="about.html" rel="import">
+</head>
+<body>
+<header class="header">
+    <h1 class="text">Welcome to <span class="minigram">MINIGRAM</span></h1>
+    <div class="buttonContainer">
+        <div class="containerToRegister">
+            <button class="toRegisterBtn">Register</button>
+        </div>
+        <div class="containerToLogin">
+            <button class="toLoginBtn">Login</button>
+        </div>
+    </div>
+    <div class="userContainer hiddenEl">
+        <div class="infoContainer">
+            <div class="avatar"></div>
+            <div class="info">
+                <button name="moreInfo" class="moreInfo ageName">˅˅</button>
+            </div>
+            <div class="quitContainer">
+                <button name="quitBtn" class="quitBtn">Quit</button>
+            </div>
+        </div>
+    </div>
+</header>
+<form id="loginForm" class="popup">
+    <div class="loginContainer">
+        <h1>Login</h1>
+        <p>Please fill in this form to enter your account.</p>
+        <hr>
+        <div class="formContainer">
+            <label><b>Email</b></label>
+            <label><input class="formInput" type="text" placeholder="Enter Email" name="email" id="firstInputLog" data-validators="required(), check-email-password()"></label>
+            <div class="errorContainer">
+                <span class="error-message error-message--required">no email</span>
+                <span class="error-message error-message--check-email-password">wrong email</span>
+            </div>
+        </div>
+        <div class="formContainer">
+            <label><b>Password</b></label>
+            <label><input class="formInput" type="password" placeholder="Enter Password" name="psw" id="secondInputLog" data-validators="required(), check-email-password()"></label>
+            <div class="errorContainer">
+                <span class="error-message error-message--required">no password</span>
+                <span class="error-message error-message--check-email-password">wrong password</span>
+            </div>
+        </div>
+        <hr>
+        <button type="submit" name="loginBtn" class="loginBtn">Login</button>
+    </div>
+</form>
+<form id="regForm" class="popup">
+    <div class="registerContainer">
+        <h1>Register</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+        <div class="formContainer">
+            <label><b>Email</b></label>
+            <label><input class="formInput" type="text" placeholder="Enter Email" name="email" id="firstInputReg" data-validators="required()"></label>
+            <div class="errorContainer">
+                <span class="error-message error-message--required">no email</span>
+            </div>
+        </div>
+        <div class="formContainer">
+            <label><b>Password</b></label>
+            <label><input class="formInput" type="password" placeholder="Enter Password" name="psw" id="secondInputReg" data-validators="required(), min-length(6), confirm-password(#thirdInputReg)"></label>
+            <div class="errorContainer">
+                <span class="error-message error-message--required">no password</span>
+                <span class="error-message error-message--min-length">short password</span>
+                <span class="error-message error-message--confirm-password">password mismatch</span>
+            </div>
+        </div>
+        <div class="formContainer">
+            <label><b>Repeat Password</b></label>
+            <label><input class="formInput" type="password" placeholder="Repeat Password" name="psw-repeat" id="thirdInputReg" data-validators="required(), min-length(6), confirm-password(#secondInputReg)"></label>
+            <div class="errorContainer">
+                <span class="error-message error-message--required">no password</span>
+                <span class="error-message error-message--min-length">short password</span>
+                <span class="error-message error-message--confirm-password">password mismatch</span>
+            </div>
+        </div>
+        <hr>
+        <button type="submit" name="registerBtn" class="registerBtn">Register</button>
+    </div>
+</form>
+<form id="resetInfoForm" class="popup">
+    <div class="resetInfoContainer">
+        <h1>reset your info</h1>
+        <hr>
+        <div class="formContainer resetInfoFormContainer">
+            <label><b>Name</b></label>
+            <label><input class="formInput" type="text" placeholder="enter your name" name="yourName" id="firstInputReset"></label>
+        </div>
+        <div class="formContainer resetInfoFormContainer">
+            <label><b>Age</b></label>
+        </div>
+        <div class="formContainer resetInfoFormContainer">
+            <label><input class="formInput" type="number" placeholder="enter your age" name="yourAge" id="secondInputReset"></label>
+        </div>
+        <div class="formContainer resetInfoFormContainer">
+            <label><b>About me</b></label>
+            <label><input class="formInput" type="text" placeholder="enter info about you" name="aboutYou" id="thirdInputReset"></label>
+        </div>
+        <hr>
+        <button type="submit" name="resetInfoFormBtn" class="resetInfoFormBtn">Reset</button>
+    </div>
+</form>
+<main class="mainContainer">
+    <aside class="leftSidebar">
+        <section class="hiddenEl" id = "root">
+            <section class = "route" id = "home">home</section>
+            <section class = "route" id = "about">about</section>
+            <section class = "route" id = "contact">contacts</section>
+        </section>
+    </aside>
+    <section class="centerContainer">
+        <p class="beforeRegLog">Please, register or log in!</p>
+        <div class="welcomeP">
+            <h1>All users:</h1>
+            <ul class="allUsers">
+            </ul>
+        </div>
+
+    </section>
+    <aside class="rightSidebar">
+
+    </aside>
+</main>
+
+<footer class="footer">
+    <h2 class="text">created by:
+        <span class="creator">YaroslavBondar@coherentsolutions.com</span>
+    </h2>
+</footer>
+<script src="script.js"></script>
+<script src="rooter.js"></script>
+</body>
+</html>

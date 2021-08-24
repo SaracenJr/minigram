@@ -1,0 +1,377 @@
+.mainContainer{
+    display: flex;
+    background-color: black;
+    min-height: 607px;
+
+}
+.header{
+    display: flex;
+    background-color: antiquewhite;
+    justify-content: space-between;
+}
+.centerContainer {
+    position: sticky;
+    width: 33.3%;
+    background-color: cadetblue;
+
+}
+.leftSidebar{
+    position: sticky;
+    width: 33.3%;
+    background-color: aqua;
+
+}
+.rightSidebar{
+    position: sticky;
+    width: 33.3%;
+    background-color: lightblue;
+
+}
+.footer{
+    position: sticky;
+    bottom: 0;
+    background-color: lightslategray;
+
+}
+.popup{
+    position: absolute;
+    z-index: 1;
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    opacity: 0;
+    top: 15%;
+    left: 30%;
+    right: 30%;
+    bottom: 50%;
+}
+.popup.showPopup{
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+}
+.myInfo{
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+    font-size: large;
+    background-color: greenyellow;
+    padding-bottom: 0.83em;
+    padding-top: 0.83em;
+}
+
+.text{
+    margin: 0;
+}
+.creator{
+    display: block;
+    color: gold;
+    margin: 0;
+    font-style: italic;
+    font-size: large;
+}
+.minigram{
+    color: deeppink;
+    margin: 0;
+    font-style: italic;
+    font-size: x-large;
+}
+.welcomeP{
+    /*display: none;*/
+    text-align: center;
+    color: yellow;
+    font-style: italic;
+    font-size: large;
+}
+.beforeRegLog{
+    text-align: center;
+    color: yellow;
+    font-style: italic;
+    font-size: large;
+}
+.help{
+    /*display: none;*/
+    color: red;
+    margin-top: 3px;
+    margin-left: 10px;
+    text-align: left;
+
+}
+
+.account{
+    margin-bottom: 3px;
+}
+.hiddenEl{
+    display: none;
+}
+
+.error-message {
+    position: absolute;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    width: 100%;
+    text-align: left;
+}
+.formContainer.has-error .error-message{
+    transform: translateX(2%);
+}
+.error--required .error-message--required,
+.error--min-length .error-message--min-length,
+.error--confirm-password .error-message--confirm-password,
+.error--check-email-password .error-message--check-email-password{
+    opacity: 1;
+}
+.errorContainer {
+    display: flex;
+    color: #ff5252;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 14px;
+    line-height: 20px;
+    height: 20px;
+    overflow: hidden;
+}
+.blurContainer{
+    animation: fadeOut 1s;
+    filter: blur(10px);
+}
+@keyframes fadeOut {
+    from{
+        filter: blur(0);
+    }
+    to{
+        filter: blur(10px);
+    }
+}
+.aboutUsers{
+    width: 98%;
+    margin: 3px;
+}
+.article{
+    display: flex;
+    background-color: lightblue;
+    margin: 3px;
+}
+.userInfo{
+    width: 70%;
+    text-align: center;
+}
+.userBtn{
+    width: 30%;
+    text-align: center;
+}
+.route {
+    cursor: pointer;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+    /* vertically centered text */
+    line-height: 50px;
+    position: relative;
+    border: 2px solid #555;
+    background: white;
+    text-align: center;
+    margin: 16px;
+}
+.route.selected { background: yellow; }
+.userContainer{
+    width: 33.3%;
+}
+.buttonContainer{
+    display: flex;
+    width: 33.3%;
+    z-index: 1;
+}
+.infoButtonContainer{
+    display: flex;
+    width: 100%;
+    z-index: 1;
+}
+.containerToReset,.containerToDelete{
+    width: 50%;
+    text-align: center;
+}
+.infoContainer{
+    display: flex;
+    z-index: 1;
+    background-color: greenyellow;
+    justify-content: space-between;
+    height: 100%;
+}
+.quitContainer{
+    background-color: greenyellow;
+    text-align: center;
+    width: 30%;
+}
+.info{
+    width: 50%;
+    text-align: center;
+    height: 100%;
+}
+
+.moreInfo{
+    width: 100%;
+    height: 100%;
+    background-color: greenyellow;
+    border: greenyellow;
+    opacity: 0.5;
+}
+.avatar{
+    width: 20%;
+    background-color: yellow;
+}
+
+.registerContainer{
+    background-color: greenyellow;
+    padding: 1px;
+    text-align: center;
+}
+.loginContainer{
+    background-color: greenyellow;
+    padding: 1px;
+    text-align: center;
+}
+.resetInfoContainer{
+    background-color: greenyellow;
+    padding: 1px;
+    text-align: center;
+}
+.resetInfoFormContainer{
+    margin: 5px;
+}
+.containerToLogin{
+    background-color: greenyellow;
+    text-align: center;
+    width: 50%;
+}
+.containerToRegister{
+    background-color: greenyellow;
+    text-align: center;
+    width: 50%;
+}
+
+.registerBtn {
+    background-color: limegreen;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+    opacity: 0.9;
+}
+.resetInfoFormBtn{
+    background-color: limegreen;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+    opacity: 0.9;
+}
+.loginBtn{
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+    opacity: 0.9;
+}
+.toLoginBtn{
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    opacity: 0.9;
+}
+.toRegisterBtn{
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    opacity: 0.9;
+}
+.resetInfoBtn{
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+    opacity: 0.9;
+    text-align: center;
+}
+.deleteBtn{
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+    opacity: 0.9;
+    text-align: center;
+}
+.quitBtn{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    padding: 8px 20px;
+    margin: 8px 0;
+}
+.moreInfo:hover{
+    opacity: 1;
+}
+.registerBtn:hover {
+    opacity:1;
+}
+.loginBtn:hover {
+    opacity:1;
+}
+.toRegisterBtn:hover{
+    opacity:1;
+}
+.toLoginBtn:hover{
+    opacity:1;
+}
+.quitBtn:hover{
+    opacity: 1;
+}
+.resetInfoBtn:hover{
+    opacity: 1;
+}
+.deleteBtn:hover{
+    opacity: 1;
+}
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+input[type=text], input[type=password], input[type=number] {
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 5px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=number]:focus{
+    background-color: #ddd;
+    outline: none;
+}
+
