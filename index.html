@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Minigram</title>
-    <link rel="stylesheet" href="css.css">
-    <link id="linkContacts" href="contacts.html" rel="import">
-    <link id="linkAbout" href="about.html" rel="import">
+    <link rel="stylesheet" href="css.css" onload="console.log('load css')">
+    <link id="linkContacts" href="/contacts.html" rel="import" onerror="console.log('not c')" onload="console.log('load c')">
+    <link id="linkAbout" href="/about.html" rel="import" onerror="console.log('not a')" onload="console.log('load a')">
 </head>
 <body>
 <header class="header">
@@ -114,9 +114,9 @@
 <main class="mainContainer">
     <aside class="leftSidebar">
         <section class="hiddenEl" id = "root">
-            <section class = "route" id = "home">home</section>
-            <section class = "route" id = "about">about</section>
-            <section class = "route" id = "contact">contacts</section>
+            <a class = "route" id = "home" href="#">home</a>
+            <a class = "route" id = "about" href="#">about</a>
+            <a class = "route" id = "contact" href="#">contacts</a>
         </section>
     </aside>
     <section class="centerContainer">
@@ -125,6 +125,8 @@
             <h1>All users:</h1>
             <ul class="allUsers">
             </ul>
+        </div>
+        <div id="rootDiv">
         </div>
 
     </section>
@@ -138,7 +140,7 @@
         <span class="creator">YaroslavBondar@coherentsolutions.com</span>
     </h2>
 </footer>
-<script src="script.js"></script>
-<script src="rooter.js"></script>
+<script src="script.js" type="module"></script>
+<script src="rooter.js" type="module"></script>
 </body>
 </html>

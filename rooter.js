@@ -1,13 +1,46 @@
+
 const linkAboutEl = document.querySelector('#linkAbout');
 const linkContactsEl = document.querySelector('#linkContacts');
+
 const centerContainerEl = document.querySelector('.centerContainer');
 const rightSideEl = document.querySelector('.rightSidebar');
 
-const linkAboutElContain = linkAboutEl.import.querySelector('.myInfo');
-const linkContactsElContain = linkContactsEl.import.querySelector('.aboutUsers');
+//const myInfoEl = linkAboutEl.querySelector('.myInfo');
+//const aboutUsersEl = linkContactsEl.querySelector('.aboutUsers');
+let url = 'about.html';
+fetch(url)
+    .then((response) => {
+        return response.text();
+    })
+    .then((data) => {
+        centerContainerEl.innerHTML=data;
+    })
 
-centerContainerEl.append(linkAboutElContain);
-rightSideEl.append(linkContactsElContain);
+const routes = {
+    '/' : 'home',
+    '/contacts' : 'contact',
+    '/about' : 'about',
+};
+
+const rootDiv = document.getElementById('rootDiv');
+rootDiv.innerHTML = routes[window.location.pathname];
+
+const onNavigate = (pathname) => {
+    window.history.pushState(
+        {},
+        pathname,
+        window.location.origin + pathname
+    )
+    rootDiv.innerHTML = routes[pathname];
+}
+window.onpopstate = () => {
+    rootDiv.innerHTML = routes[window.location.pathname]
+}
+window.onload = event => {
+    window["home"].addEventListener("click", onNavigate('home'));
+    window["about"].addEventListener("click", onNavigate('about'));
+    window["contacts"].addEventListener("click", onNavigate('contacts'));
+}
 
 
 
@@ -19,9 +52,6 @@ function select_tab(id) {
 }
 function load_content(id) {
     console.log("Loading content for {" + id + "}");
-
-
-
 }
 function push(event) {
     let id = event.target.id;
@@ -53,8 +83,9 @@ window.addEventListener("popstate", event => {
 function showPage(page){
 
 }
+/*
 const routes = {
     '#/about': () => linkAboutEl,
     '#/contacts': () => linkContactsEl,
     //'#home': () => showPage('home'),
-}
+}*/
